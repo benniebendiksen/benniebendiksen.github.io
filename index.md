@@ -4,8 +4,8 @@
 
 ### Category Name 1 
 
-[Project 1 Title](/sample_page)
-<img src="images/GDPAndRank.jpg?raw=true"/>
+[Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/sample_page)
+<img src="images/GDPAndRank.png?raw=true"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
