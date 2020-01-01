@@ -2,22 +2,24 @@
 
 ---
 
-### Category Name 1 
+### Data Visualization
+
+[Project 2 Title](/pdf/sample_presentation.pdf)
+<img src="images/dummy_thumbnail.jpg?raw=true"/>
+
+---
 
 [Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/sample_page)
 <img src="images/GDPAndRank.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
 
----
 [Project 3 Title](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
-### Category Name 2
+### Statistical Modeling
 
 - [Project 1 Title](http://example.com/)
 - [Project 2 Title](http://example.com/)
