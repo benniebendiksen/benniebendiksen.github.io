@@ -18,7 +18,6 @@
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-
 ### Statistical Modeling
 
 - [Project 1 Title](http://example.com/)
