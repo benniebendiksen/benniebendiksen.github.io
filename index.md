@@ -9,7 +9,7 @@
 
 ---
 
-[Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/sample_page)
+[Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Country_Energy_GDP)
 <img src="images/GDPAndRank.png?raw=true"/>
 
 ---
