@@ -4,7 +4,7 @@
 
 ### Data Visualization
 
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Project 2 Title](/pdf/sample_presentation2.pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
