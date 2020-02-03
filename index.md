@@ -4,10 +4,6 @@
 
 ### Data Visualization
 
-[Project 2 Title](/pdf/sample_presentation2.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
 
 [Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Country_Energy_GDP/Country_Energy_GDP.ipynb)
 <img src="images/GDPAndRank.png?raw=true"/>
@@ -20,7 +16,12 @@
 ---
 ### Statistical Modeling
 
-- [Project 1 Title](http://example.com/)
+[Sci-Ed Fellowship Survey Scales Iterative Factor Analyses](/pdf/Sci-Ed Fellowship Survey Scales Factor Analysis 2017-2019.pdf)
+<img src="images/dummy_thumbnail.jpg?raw=true"/>
+
+---
+
+- [Project 2 Title](http://example.com/)
 - [Project 2 Title](http://example.com/)
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
