@@ -16,7 +16,7 @@
 ---
 ### Statistical Modeling
 
-[Sci-Ed Fellowship Survey Scales Iterative Factor Analyses](/pdf/Sci-Ed Fellowship Survey Scales Factor Analysis 2017-2019.pdf)
+[Sci-Ed Fellowship Survey Scales Iterative Factor Analyses](/pdf/Sci-Ed Fellowship Survey Scales Factor Analysis 2017-2019.pptx)
 <img src="images/fa_2018_prepost.png?raw=true"/>
 
 ---
