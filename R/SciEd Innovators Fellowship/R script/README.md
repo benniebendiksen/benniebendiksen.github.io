@@ -23,15 +23,15 @@ library(GPArotation)
 library(psych)
 
 
-#### Declare functions to be used
-#### My Func for generating item means per scale (will use across waves and states)####
+####Declare functions to be used
+####My Func for generating item means per scale (will use across waves and states)####
 item_means <- function(df, item_list){  
   item_means <- colMeans(df[, c(item_list)], na.rm=T)
   
   return(item_means)
 } 
 
-#### My Func for plotting generated (scale) item means between waves and states; automatically saves plots###
+####My Func for plotting generated (scale) item means between waves and states; automatically saves plots###
 grid_barplot_item_means_fun = function(state_wave_item_means, scale_items_list, fig_title){
   state_wave_item_means <- melt(state_wave_item_means)  #the function melt reshapes it from wide to long
   setnames(state_wave_item_means, "value", "Mean")
@@ -53,7 +53,7 @@ grid_barplot_item_means_fun = function(state_wave_item_means, scale_items_list, 
   return (state_wave_item_means)
 }
 
-#### My func for generating and plotting Scale means by wave and state (returned value of prev. func. is an argument here)####
+####My func for generating and plotting Scale means by wave and state (returned value of prev. func. is an argument here)####
 grid_barplot_scale_mean_fun = function(state_wave_item_means, column_name){
   #Get Scale Mean
   scale_mean<-sapply(split(state_wave_item_means$Mean, state_wave_item_means$Wave_State), mean)
