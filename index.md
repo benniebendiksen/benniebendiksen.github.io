@@ -6,7 +6,7 @@
 
 [Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty With Error Estimation)
 <img src="images/1.png?raw=true"/><img src="images/2.png?raw=true"/>
-<img src="images/3.png?raw=true"/><img src="Pimages/4.png?raw=true"/>
+<img src="images/3.png?raw=true"/><img src="images/4.png?raw=true"/>
 
 ---
 
