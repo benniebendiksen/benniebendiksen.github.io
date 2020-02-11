@@ -2,6 +2,7 @@
 
 ### Program Background
 The Jhimmy Basu Foundation for Professional Teacher Development contracted Boston College's _Innovations in Urban Science Education_ (iUSE) to the end of refining and distributing its measures for Democracy in STEM Teaching (DST) along with student affective scales, prior to their second survey iteration commencing in 2018. This process aided in fostering a nuanced understanding of the DST principles in ways that can inform the design and implementation of the program model. The updated 2018-2019 surveys include scales for each of the three DST principles (Student Voice, Shared and Transformational Authority, and Critical STEM Literacy) as well as various affective dimensions that the program aims to support (e.g., sense of community, emotional engagement, and self-concept). The Basu foundation carries a vision for improved Democracy in Science education, wherein students may feel they are active participants that carry a voice regarding material learned. 
+<img src="SciEd.png?raw=true"/> <img src="iUSE.png?raw=true"/>
 
 ### Prior Factor Analysis
 
