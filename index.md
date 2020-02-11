@@ -22,7 +22,7 @@
 <img src="images/SciEd EFA 2018-2019.pdf?raw=true"/>
 ---
 
-[Sci-Ed Fellowship Survey Scales Descriptives and Iterative Factor Analyses .R](/R)
+[Sci-Ed Fellowship Survey Scales Descriptives and Iterative Factor Analyses .R](/R/)
 <img src="images/SciEd EFA 2018-2019.png?raw=true"/>
 
 
