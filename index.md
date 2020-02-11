@@ -5,8 +5,9 @@
 ### Data Visualization
 
 [Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty With Error Estimation)
-<img src="images/1.png?raw=true"/><img src="images/2.png?raw=true"/>
-<img src="images/3.png?raw=true"/><img src="images/4.png?raw=true"/>
+Solarized dark                           |  Solarized Ocean
+:---------------------------------------:|:-----------------------------------------:
+![](<img src="images/1.png?raw=true"/>)  |  ![](<img src="images/2.png?raw=true"/>)
 
 ---
 
