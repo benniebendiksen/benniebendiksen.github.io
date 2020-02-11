@@ -22,7 +22,7 @@
 ---
 
 [Sci-Ed Fellowship Project View R Script](/R/SciEd Innovators Fellowship/R script)
-<img src="images/SciEd EFA 2018-2019.png?raw=true"/>
+
 
 
 ---
