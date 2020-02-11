@@ -17,8 +17,8 @@
 ### Statistical Modeling
 
 [Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
-<img src="images/Wave_State_Race.png?raw=true"/>
-<img src="images/Scale_Means.png?raw=true"/>
+<img src="images/Wave_State_Race.png?raw=true"/> <img src="images/Scale_Means.png?raw=true"/>
+
 ---
 
 [Sci-Ed Fellowship Automated Descriptives and Factor Analyses .R](/R/)
