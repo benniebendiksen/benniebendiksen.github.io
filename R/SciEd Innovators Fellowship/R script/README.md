@@ -1,3 +1,4 @@
+```markdown
 ################
 #Scale item means, Scale means, by wave (Pre/Post) and by state.
 #Race Distributions, by wave and by state
@@ -91,7 +92,7 @@ Basufa18sp19[c("CritSTMLit_1", "CritSTMLit_2","CritSTMLit_4", "CritSTMLit_5")] <
 Basufa18sp19[c("Comm_1", "Comm_2r", "Comm_3", "Comm_4", "Comm_5")] <- lapply(Basufa18sp19[c("Comm_1", "Comm_2r", "Comm_3", "Comm_4", "Comm_5")], function(x) as.numeric(x))
 Basufa18sp19[c("Eng_1", "Eng_2", "Eng_3", "Eng_4")] <- lapply(Basufa18sp19[c("Eng_1", "Eng_2", "Eng_3", "Eng_4")], function(x) as.numeric(x))
 Basufa18sp19[c("SelfConc_1r", "SelfConc_2", "SelfConc_3", "SelfConc_4r", "SelfConc_5r")] <- lapply(Basufa18sp19[c("SelfConc_1r", "SelfConc_2", "SelfConc_3", "SelfConc_4r", "SelfConc_5r")], function(x) as.numeric(x))
-# Re-check dataset by variables to ensure "string' vars converted to numerics; empty string values now missing value datatype
+#Re-check dataset by variables to ensure "string' vars converted to numerics; empty string values now missing value datatype
 lapply(Basufa18sp19, class)
 str(Basufa18sp19) 
 
@@ -302,14 +303,14 @@ KMO(correlations)
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 #Parallel analysis suggests that the number of factors =  8
 nofactors= fa.parallel(Basufa18sp19_Pre, fm = "ml", fa= "fa")
-# Based on Eigen Values of components >1 scree plot suggests number of factors = 7 or 8
+#Based on Eigen Values of components >1 scree plot suggests number of factors = 7 or 8
 scree = scree(Basufa18sp19_Pre)
 
 #efa.model.1 <- fa(Basufa18sp19_Pre, nfactors = 8, rotate="varimax", SMC=FALSE, fm = "pa")
 
 #Similar results with orthogonal rotation
 efa.model.1 <- fa(Basufa18sp19_Pre, nfactors = 8, rotate="oblimin", SMC=FALSE, fm = "pa")
-# under orthogonal rotation, inter-factor correlations < .48, no high degree of collinearity, we conclude we have 8 factors
+#under orthogonal rotation, inter-factor correlations < .48, no high degree of collinearity, we conclude we have 8 factors
 #Suppress printing factor loadings =< 0.3
 print(efa.model.1, cut = 0.3, digits = 3)
 
@@ -317,10 +318,10 @@ print(efa.model.1, cut = 0.3, digits = 3)
 #efa.model.2 <- fa(df_scales, nfactors = 7, rotate="varimax", SMC=FALSE, fm = "pa")
 #print(efa.model.2, cut = 0.3, digits = 3)
 
-# It seems nfactors = 8 fits the data well and is most sensible in interpretting: all scales load moderately to strongly
-# on one factor (allowing for their construct interpretation) save for 1 self-concept in STEM item (SelfConc_2) and Comm_2.
-# Self Conc 1 and Comm 2 load on separate factor
-# SelfConc 1, SelfConc2 and Comm 2 currently do not correlate well with their respective scale items!
+#It seems nfactors = 8 fits the data well and is most sensible in interpretting: all scales load moderately to strongly
+#on one factor (allowing for their construct interpretation) save for 1 self-concept in STEM item (SelfConc_2) and Comm_2.
+#Self Conc 1 and Comm 2 load on separate factor
+#SelfConc 1, SelfConc2 and Comm 2 currently do not correlate well with their respective scale items!
 
 ################
 #Exploratory Factor Analysis (Post)
@@ -343,27 +344,27 @@ KMO(correlations2)
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 #Parallel analysis also suggests that the number of factors =  8
 nofactors= fa.parallel(Basufa18sp19_Post, fm = "ml", fa= "fa")
-# Based on Eigen Values of components >1 scree plot suggests number of factors = 7 or 8
+#Based on Eigen Values of components >1 scree plot suggests number of factors = 7 or 8
 scree = scree(Basufa18sp19_Post)
 
 efa.model.1.post <- fa(Basufa18sp19_Post, nfactors = 8, rotate="varimax", SMC=FALSE, fm = "pa")
 
 #Orthogonal rotation yields most interpretable factor analytic solution at 8 factors.
-# Factor correlations all below .560, usually a lot lower, suggesting no degree of collinearity (factors are independent)
+#Factor correlations all below .560, usually a lot lower, suggesting no degree of collinearity (factors are independent)
 efa.model.1.post <- fa(Basufa18sp19_Post, nfactors = 8, rotate="oblimin", SMC=FALSE, fm = "pa")
 
 #efa.model.1.post <- fa(Basufa18sp19_Post, nfactors = 7, rotate="varimax", SMC=FALSE, fm = "pa")
 #Suppress printing factor loadings =< 0.3
 print(efa.model.1.post, cut = 0.3, digits = 3)
-# We settle for an 8 factor solution again due to the fact that each factor has at least two maximum item loadings, 
-# and that this solution is easier to interpret than the 7 factor solution (two scales load on one factor);
+#We settle for an 8 factor solution again due to the fact that each factor has at least two maximum item loadings, 
+#and that this solution is easier to interpret than the 7 factor solution (two scales load on one factor);
 #SelfConc 2, and 3 load on separate factor (as opposed to Self Conc 1 and Comm 2)
 #While Self Conc 2 and 3, Comm 2, and now Shared Authority 4 do not hang well with their respective scale items.
 
 #Self Concept 1 re-aligned with its scale, but Self Concept 3 now loading separately...
-# Self Concept 2, Self Concept 3, Shared Authority 4, and Community Connectedness 2 will require further revision (though sample size for Post is a few hundred cases smaller than Pre).
+#Self Concept 2, Self Concept 3, Shared Authority 4, and Community Connectedness 2 will require further revision (though sample size for Post is a few hundred cases smaller than Pre).
 
-# We consider this a significant improvement in aligning the latent structures of all but two of our seven scales to a single latent trait per scale (compared to 2017 single factor solution)
+#We consider this a significant improvement in aligning the latent structures of all but two of our seven scales to a single latent trait per scale (compared to 2017 single factor solution)
 
-
+```
 
