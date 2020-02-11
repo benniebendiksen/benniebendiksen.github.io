@@ -21,7 +21,7 @@
 
 ---
 
-[Sci-Ed Fellowship Automated Descriptives and Factor Analyses .R](/R/)
+[Sci-Ed Fellowship Automated Descriptives and Factor Analyses .R](/R/SciEd Innovators Fellowship/R script/)
 <img src="images/SciEd EFA 2018-2019.png?raw=true"/>
 
 
