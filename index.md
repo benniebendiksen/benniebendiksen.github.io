@@ -5,10 +5,12 @@
 ### Data Visualization
 
 
-[Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP.ipynb)
+[Cleaning, Merging, and Profiling Datasets; Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
 <img src="images/GDPAndRank.png?raw=true"/>
 
 ---
+[Country Energy GDP Download Python Jupyter Notebook (.ipynb)](/Python/Country_Energy_GDP/Country_Energy_GDP.ipynb)
+
 
 [Project 3 Title](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
