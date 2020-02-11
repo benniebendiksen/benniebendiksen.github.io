@@ -2,7 +2,7 @@ Building a Custom Visualization
 
 ---
 
-When it comes to visualizing samples, the challenges users face when trying to make judgements about probabilistic data generated through samples has been noted.
+When it comes to visualizing samples, challenges arise when users are faced with trying to make judgements about probabilistic data generated through samples.
 
 The following encapsulates an example involving random draws from the normal distribution under differing parameters (mean and standard deviation); each draw is set to represent a sample of some population from a different year.
 
