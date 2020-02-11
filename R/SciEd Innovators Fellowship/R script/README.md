@@ -1,4 +1,3 @@
-```markdown
 ################
 #Scale item means, Scale means, by wave (Pre/Post) and by state.
 #Race Distributions, by wave and by state
@@ -23,12 +22,66 @@ library(plyr)
 library(GPArotation)
 library(psych)
 
+
+#### Declare functions to be used
+#### My Func for generating item means per scale (will use across waves and states)####
+item_means <- function(df, item_list){  
+  item_means <- colMeans(df[, c(item_list)], na.rm=T)
+  
+  return(item_means)
+} 
+
+#### My Func for plotting generated (scale) item means between waves and states; automatically saves plots###
+grid_barplot_item_means_fun = function(state_wave_item_means, scale_items_list, fig_title){
+  state_wave_item_means <- melt(state_wave_item_means)  #the function melt reshapes it from wide to long
+  setnames(state_wave_item_means, "value", "Mean")
+  state_wave_item_means$Wave_State <- mapvalues(state_wave_item_means$variable, from = c("Pre.Massachusetts", "Post.Massachusetts", "Pre.New York", "Post.New York"), to = c("Pre-Mass.", "Post-Mass.", "Pre-NY", "Post-NY"))
+  state_wave_item_means$Wave_State <- factor(state_wave_item_means$Wave_State, levels = c("Pre-Mass.", "Post-Mass.", "Pre-NY", "Post-NY"))
+  count <- 0
+  for (value in scale_items_list){
+    count = count + 1
+  }
+  state_wave_item_means$rowid <- 1:count #add a rowid identifying variable
+  temp_plot<-ggplot(state_wave_item_means, aes(x = Wave_State, y = Mean,  fill = variable, label = round(Mean, digits =2))) + 
+    facet_wrap(~ rowid) +
+    geom_bar(stat="identity", show.legend=FALSE) +
+    theme(text = element_text(size=10), 
+          axis.text.x = element_text(angle=90, hjust=1)) +
+    geom_text(size = 3, position = position_stack(vjust = 0.5))
+  ggsave(paste0(fig_title, "_item_means",".png"), temp_plot)
+  
+  return (state_wave_item_means)
+}
+
+#### My func for generating and plotting Scale means by wave and state (returned value of prev. func. is an argument here)####
+grid_barplot_scale_mean_fun = function(state_wave_item_means, column_name){
+  #Get Scale Mean
+  scale_mean<-sapply(split(state_wave_item_means$Mean, state_wave_item_means$Wave_State), mean)
+  #Restructure to Long Format
+  scale_mean <- melt(scale_mean)
+  #add a rowid identifying variable
+  scale_mean$Wave_State <- c("Pre-Mass.", "Post-Mass.","Pre-NY.", "Post-NY.")
+  scale_mean$Wave_State = factor(scale_mean$Wave_State,levels= scale_mean$Wave_State, ordered = T)
+  #Rename 1st Column (Scale Mean Value)
+  colnames(scale_mean)[1] <- column_name
+  #Now Make a Plot of Scale Mean by Wave and State
+  mean_plot <- ggplot(data=scale_mean, aes(x=Wave_State, y= .data[[column_name]], fill= .data[[column_name]], label = round(.data[[column_name]], digits = 2))) +
+    geom_bar(stat="identity") + guides(colour = guide_colourbar(order = 1)) +
+    theme(text = element_text(size=10), legend.title = element_blank(), axis.title.y=element_blank(), 
+          axis.text.x = element_text(angle=90, hjust=1)) +
+    geom_text(size = 2.5, position = position_stack(vjust = 0.5)) +
+    ggtitle(paste(column_name, "_Mean", sep = " "))
+  
+  return (mean_plot)
+}
+
+
+
 #Read-in fa18sp19 Basu dataset, ensure dataframe is structured
 Basufa18sp19<-read.csv(file="SciEd_Student_Survey_grades_612.csv", stringsAsFactors=FALSE, header=T)
 Basufa18sp19 <- Basufa18sp19[-1, ]
 
-
-str(Basufa18sp19)  # check the structure of the data; 974 cases, 69 vars, all scale items as strings
+str(Basufa18sp19)  # check the structure of the data; 2080 cases, 88 vars, all scale items as strings
 
 #convert scale items to numeric (double precision point math may be needed subsequently, avoid converting to only int)
 Basufa18sp19[c("CritVoi_1", "CritVoi_2", "CritVoi_3", "CritVoi_4")]<- lapply(Basufa18sp19[c("CritVoi_1", "CritVoi_2", "CritVoi_3", "CritVoi_4")], function(x) as.numeric(x))
@@ -54,59 +107,6 @@ Basufa18sp19$State[Basufa18sp19$Q25=="2"]<-"New York"
 
 Basufa18sp19$PrePost[Basufa18sp19$Q24=="1"]<-"Pre"
 Basufa18sp19$PrePost[Basufa18sp19$Q24=="2"]<-"Post"
-
-
-
-####My Func for generating items means per scale and between waves####
-item_means <- function(df, item_list){  
-  item_means <- colMeans(df[, c(item_list)], na.rm=T)
-  
-  return(item_means)
-} 
-
-####My Func for plotting (and prepping for future func) generated (scale) item means between waves; automatically saves plots###
-grid_barplot_item_means_fun = function(state_wave_item_means, scale_items_list, fig_title){
-  state_wave_item_means <- melt(state_wave_item_means)  #the function melt reshapes it from wide to long
-  setnames(state_wave_item_means, "value", "Mean")
-  state_wave_item_means$Wave_State <- mapvalues(state_wave_item_means$variable, from = c("Pre.Massachusetts", "Post.Massachusetts", "Pre.New York", "Post.New York"), to = c("Pre-Mass.", "Post-Mass.", "Pre-NY", "Post-NY"))
-  state_wave_item_means$Wave_State <- factor(state_wave_item_means$Wave_State, levels = c("Pre-Mass.", "Post-Mass.", "Pre-NY", "Post-NY"))
-  count <- 0
-  for (value in scale_items_list){
-    count = count + 1
-  }
-  state_wave_item_means$rowid <- 1:count #add a rowid identifying variable
-  temp_plot<-ggplot(state_wave_item_means, aes(x = Wave_State, y = Mean,  fill = variable, label = round(Mean, digits =2))) + 
-    facet_wrap(~ rowid) +
-    geom_bar(stat="identity", show.legend=FALSE) +
-      theme(text = element_text(size=10), 
-        axis.text.x = element_text(angle=90, hjust=1)) +
-          geom_text(size = 3, position = position_stack(vjust = 0.5))
-  ggsave(paste0(fig_title, "_item_means",".pdf"), temp_plot)
-  
-  return (state_wave_item_means)
-}
-
-####My func for generating and plotting Scale means by wave (returned value of prev. func. is an argument here)####
-grid_barplot_scale_mean_fun = function(state_wave_item_means, column_name){
-  #Get Scale Mean
-  scale_mean<-sapply(split(state_wave_item_means$Mean, state_wave_item_means$Wave_State), mean)
-  #Restructure to Long Format
-  scale_mean <- melt(scale_mean)
-  #add a rowid identifying variable
-  scale_mean$Wave_State <- c("Pre-Mass.", "Post-Mass.","Pre-NY.", "Post-NY.")
-  scale_mean$Wave_State = factor(scale_mean$Wave_State,levels= scale_mean$Wave_State, ordered = T)
-  #Rename 1st Column (Scale Mean Value)
-  colnames(scale_mean)[1] <- column_name
-  #Now Make a Plot of Scale Mean by Wave and State
-  mean_plot <- ggplot(data=scale_mean, aes(x=Wave_State, y= .data[[column_name]], fill= .data[[column_name]], label = round(.data[[column_name]], digits = 2))) +
-    geom_bar(stat="identity") + guides(colour = guide_colourbar(order = 1)) +
-      theme(text = element_text(size=10), legend.title = element_blank(), axis.title.y=element_blank(), 
-        axis.text.x = element_text(angle=90, hjust=1)) +
-          geom_text(size = 2.5, position = position_stack(vjust = 0.5)) +
-            ggtitle(paste(column_name, "_Mean", sep = " "))
-  
-  return (mean_plot)
-}
 
 
 #Set grouping-by criteria for future aggregate stats (mean)
@@ -237,12 +237,12 @@ selfconc_state_wave_plot <- grid_barplot_scale_mean_fun(selfconc_means_state_wav
 ################
                 
 #arrange first six scale mean barplots as grid and save
-pdf("Scale_Means.pdf")
+png("Scale_Means.png")
 grid.arrange(crit_voi_mean_state_wave_plot, shr_auth_mean_state_wave_plot, stdntvoi_mean_state_wave_plot, critstm_mean_state_wave_plot, comm_mean_state_wave_plot, eng_mean_state_wave_plot)
 dev.off()
 
 #save remaining seventh scale mean barplot
-ggsave(paste0("Self Concept in STEM", "_mean",".pdf"), selfconc_state_wave_plot)
+ggsave(paste0("Self Concept in STEM", "_mean",".png"), selfconc_state_wave_plot)
 
 ######Race Plots####
 
@@ -260,15 +260,15 @@ Basufa18sp19$races <- as.factor(Basufa18sp19$race)
 df_Wave_State  <- Basufa18sp19 %>%
   split(.[, splt.by])
 
-pre_MA_race <- ggplot(data=df_Wave_State[2][["Pre.Massachusetts"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1)) + ggtitle("Pre MA: Race")
+pre_MA_race <- ggplot(data=df_Wave_State[2][["Pre.Massachusetts"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), legend.position = "none", axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1)) + ggtitle("Pre MA: Race")
 
-post_MA_race <- ggplot(data=df_Wave_State[1][["Post.Massachusetts"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1))+ ggtitle("Post MA: Race")
+post_MA_race <- ggplot(data=df_Wave_State[1][["Post.Massachusetts"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), legend.position = "none", axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1))+ ggtitle("Post MA: Race")
 
-pre_NY_race  <- ggplot(data=df_Wave_State[4][["Pre.New York"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1)) + ggtitle("Pre NY: Race")
+pre_NY_race  <- ggplot(data=df_Wave_State[4][["Pre.New York"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), legend.position = "none", axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1)) + ggtitle("Pre NY: Race")
 
-post_NY_race <- ggplot(data=df_Wave_State[3][["Post.New York"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1)) + ggtitle("Post NY: Race")
+post_NY_race <- ggplot(data=df_Wave_State[3][["Post.New York"]]) + geom_bar(aes(x = races, fill = races)) + theme(text = element_text(size=10), legend.title = element_blank(), legend.position = "none", axis.title.x=element_blank(), axis.text.x = element_text(angle=90, hjust=1)) + ggtitle("Post NY: Race")
 
-pdf("Wave_State_Race.pdf")
+png("Wave_State_Race.png")
 grid.arrange(pre_MA_race, post_MA_race, pre_NY_race, post_NY_race)
 dev.off()
 
@@ -364,4 +364,6 @@ print(efa.model.1.post, cut = 0.3, digits = 3)
 # Self Concept 2, Self Concept 3, Shared Authority 4, and Community Connectedness 2 will require further revision (though sample size for Post is a few hundred cases smaller than Pre).
 
 # We consider this a significant improvement in aligning the latent structures of all but two of our seven scales to a single latent trait per scale (compared to 2017 single factor solution)
-```
+
+
+
