@@ -4,7 +4,7 @@
 
 ### Data Visualization
 
-[Cleaning, Merging, and Profiling Datasets; Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
+[Country_Energy_GDP: Cleaning, Merging, and Profiling Datasets. Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
 <img src="images/GDPAndRank.png?raw=true"/>
 
 ---
