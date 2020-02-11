@@ -1,3 +1,4 @@
+```markdown
 ################
 #Scale item means, Scale means, by wave (Pre/Post) and by state.
 #Race Distributions, by wave and by state
@@ -363,3 +364,4 @@ print(efa.model.1.post, cut = 0.3, digits = 3)
 # Self Concept 2, Self Concept 3, Shared Authority 4, and Community Connectedness 2 will require further revision (though sample size for Post is a few hundred cases smaller than Pre).
 
 # We consider this a significant improvement in aligning the latent structures of all but two of our seven scales to a single latent trait per scale (compared to 2017 single factor solution)
+```
