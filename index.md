@@ -10,7 +10,7 @@
 ---
 
 [Country Energy GDP Download Python Jupyter Notebook (.ipynb)](/Python/Country_Energy_GDP/Country_Energy_GDP.ipynb)
-<img src="images/Countries_Notebook_Example.jpg?raw=true"/>
+<img src="images/Countries_Notebook_Example.png?raw=true"/>
 
 ---
 
