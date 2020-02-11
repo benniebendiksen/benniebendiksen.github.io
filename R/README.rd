@@ -1,4 +1,4 @@
-A Repository for Projects I've Completed in R
+A Repository of Projects I've Completed in R
 
 
 
