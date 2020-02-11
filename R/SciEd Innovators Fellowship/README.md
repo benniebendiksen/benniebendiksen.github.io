@@ -1,4 +1,4 @@
-## Visualizing Scale Means, Race Distribution, and Performing Exploratory Factor Analyses on Updated 2018-2019 surveys of a Professional Teacher Development Program
+## Visualizing Scale Means, Race Distribution, and Performing Exploratory Factor Analyses on Updated 2018-2019 Surveys of a Professional Teacher Development Program
 
 ## Background
 The Jhimmy Basu Foundation for Professional Teacher Development contracted Boston College's _Innovations in Urban Science Education_ (iUSE) to the end of refining and distributing its measures for Democracy in STEM Teaching (DST) along with student affective scales, prior to their second survey iteration commencing in 2018.
