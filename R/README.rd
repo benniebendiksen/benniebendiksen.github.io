@@ -1,4 +1,4 @@
-```markdown
+
 ################
 #Scale item means, Scale means, by wave (Pre/Post) and by state.
 #Race Distributions, by wave and by state
@@ -367,5 +367,5 @@ print(efa.model.1.post, cut = 0.3, digits = 3)
 
 
 
-```
+
 
