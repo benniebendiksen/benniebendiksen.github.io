@@ -7,11 +7,10 @@
 [Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty With Error Estimation)
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/1.png?raw=true">  blah |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/2.png?raw=true">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/3.png?raw=true">|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/4.png?raw=true">  | 
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/1.png?raw=true">  blah |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/2.png?raw=true">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/3.png?raw=true">| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/4.png?raw=true">| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/5.png?raw=true">| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/6.png?raw=true">|
 
-<img src="images/1.png?raw=true"/><img src="images/2.png?raw=true"/>
-<img src="images/3.png?raw=true"/><img src="images/4.png?raw=true"/>
+
+
 ---
 
 [Visualizing Uncertainty With Error Estimation Download Python Jupyter Notebook (.ipynb)]
