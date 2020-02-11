@@ -16,13 +16,12 @@
 ---
 ### Statistical Modeling
 
-[Sci-Ed Fellowship Survey Scales Descriptives and Iterative Factor Analyses Project](/R/SciEd Innovators Fellowship)
-<img src="images/Wave_State_Race.pdf?raw=true"/>
-<img src="images/Scale_Means.pdf?raw=true"/>
-<img src="images/SciEd EFA 2018-2019.pdf?raw=true"/>
+[Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
+<img src="images/Wave_State_Race.png?raw=true"/>
+<img src="images/Scale_Means.png?raw=true"/>
 ---
 
-[Sci-Ed Fellowship Survey Scales Descriptives and Iterative Factor Analyses .R](/R/)
+[Sci-Ed Fellowship Automated Descriptives and Factor Analyses .R](/R/)
 <img src="images/SciEd EFA 2018-2019.png?raw=true"/>
 
 
