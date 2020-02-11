@@ -18,8 +18,6 @@
 
 [Sci-Ed Fellowship Survey Scales Descriptives and Iterative Factor Analyses](/R/SciEd Innovators Fellowship)
 <img src="R/SciEd Innovators Fellowship/Wave_State_Race.pdf?raw=true"/>
-<img src="R/SciEd Innovators Fellowship/Scale_Means.pdf?raw=true"/>
-<img src="R/SciEd Innovators Fellowship/Crit_Voice_item_means.pdf?raw=true"/>
 
 ---
 
