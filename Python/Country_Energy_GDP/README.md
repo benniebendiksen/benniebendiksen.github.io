@@ -104,12 +104,12 @@ import operator
 def energy():
     energy = pd.ExcelFile('Energy Indicators.xls')
 
-    # parsing first (index: 0) sheet
+    #parsing first (index: 0) sheet
     total_rows = energy.book.sheet_by_index(0).nrows
     #print(f"total rows:{total_rows}")
     ##skiprows indexing starts at 1
     header = 17
-    ## 244 instead of the 245 rows of interest (with header/skiprows exception) since indexing starts at 0
+    ##244 instead of the 245 rows of interest (with header/skiprows exception) since indexing starts at 0
     nrows = 244 - header
     footer = total_rows - 244
     #print(f"header:{header}")
