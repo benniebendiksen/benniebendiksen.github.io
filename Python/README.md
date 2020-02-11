@@ -1,1 +1,1 @@
-Repository for projects of mine in Python
+Repository for Projects of Mine in Python
