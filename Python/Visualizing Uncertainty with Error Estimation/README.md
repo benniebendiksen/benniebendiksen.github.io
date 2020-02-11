@@ -13,6 +13,7 @@ I've chosen to add interactivity to the above with a gradient response, which al
 
 Indicated y-axis value was transformed into a ratio given the error bar (estimated standard error) max and min values ((y - low)/ (high- low)); ratio values were then binned across 10 equal intervals ranging from .09 to 1. Therefore, bar color changes are reflective of the mapping between these intervals and a generated 10 element color gradient (r,g,b) list, with white existing only when the ratio = 0.5 (i.e., indicated y-axis value is exactly equal to estimated parameter value for given sample).
 
+```markup
 
 ####My Script (.py)
 
@@ -190,3 +191,4 @@ p = PointPicker(fig, ax1, df_mean, std_err)
 #fig.subplots_adjust=0.85
 #plt.tight_layout()
 fig.show()
+```
