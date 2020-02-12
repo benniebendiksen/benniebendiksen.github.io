@@ -50,7 +50,7 @@
 
 ---
 
-- [Hierarchical Linear Modeling (Regression within Nesting Contexts) for Mental Health](/HLM/Multilevel_Modeling_Mental_Health.pdf)
+[Hierarchical Linear Modeling (Regression within Nesting Contexts) for Mental Health](/HLM/Multilevel_Modeling_Mental_Health.pdf)
 
 ---
 
