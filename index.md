@@ -20,10 +20,7 @@
 
 [Weather Trend Analysis](Python/Weather Trend Analysis)
 
-
-:-------------------------:|:-------------------------:
-![](images/Line_Plot_Daily_Record.png?raw=true)  |  ![](images/Line_Plot_Decade_Record.png?raw=true)
-
+<img src="images/Line_Plot_Daily_Record.png?raw=true"/> <img src="images/Line_Plot_Decade_Record.png?raw=true"/>
 
 ---
 
