@@ -4,7 +4,7 @@
 
 ### Data Visualization
 
-[Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty With Error Estimation)
+[Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty with Error Estimation)
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
