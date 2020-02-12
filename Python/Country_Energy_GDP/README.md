@@ -1,44 +1,6 @@
 ```markdown
+
 ##Pandas use assignment: data cleaning, merging, and profiling
-
-#####Check Python and Import search directories, Install and Import needed modules
-
-#In[ ]:
-
-
-import sys
-
-
-#In[ ]:
-
-
-print(sys.executable)
-
-
-#In[ ]:
-
-
-print(sys.path)
-
-
-#In[ ]:
-
-
-get_ipython().system(u'pip3 install xlrd')
-get_ipython().system(u'pip3 install pandas')
-get_ipython().system(u'pip3 install numpy')
-get_ipython().system(u'pip3 install re')
-get_ipython().system(u'pip3 install matplotlib')
-
-
-#In[ ]:
-
-
-get_ipython().system(u'pip3 install --upgrade pip')
-
-
-#In[2]:
-
 
 import pandas as pd
 import numpy as np
