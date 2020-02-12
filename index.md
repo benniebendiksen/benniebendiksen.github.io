@@ -20,6 +20,7 @@
 
 [Weather Trend Analysis](Python/Weather Trend Analysis)
 
+
 :-------------------------:|:-------------------------:
 ![](images/Line_Plot_Daily_Record.png?raw=true)  |  ![](images/Line_Plot_Decade_Record.png?raw=true)
 
@@ -27,7 +28,6 @@
 ---
 
 [Weather Trend Analysis Download Jupyter Notebook pdf](Python/Weather Trend Analysis/Weather Trend Analysis Near Ann Harbor, Michigan (2005-2014).pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
