@@ -22,7 +22,7 @@
 
 | | |
 |:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/Line_Plot_Daily_Record.png?raw=true">  | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/Line_Plot_Decad_Record.png?raw=true">|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/Line_Plot_Daily_Record.png?raw=true">  | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/Line_Plot_Decade_Record.png?raw=true">|
 
 ---
 
