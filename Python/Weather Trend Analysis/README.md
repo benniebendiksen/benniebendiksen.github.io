@@ -1,3 +1,25 @@
+# Daily Temperature Trend Analysis
+
+I will make a line plot with a scatter overlay of daily data points exceeding the previous ten year daily record high or low for each respective day, as well as a line plot for data points exceeding the previous ten year _overall_ record high or low
+
+
+The following variables are provided in a csv:
+
+* **id** : station identification code
+* **date** : date in YYYY-MM-DD format (e.g. 2012-01-24 = January 24, 2012)
+* **element** : indicator of element type
+    * TMAX : Maximum temperature (tenths of degrees C)
+    * TMIN : Minimum temperature (tenths of degrees C)
+* **value** : data value for element (tenths of degrees C)
+
+
+1. Read the documentation and familiarize yourself with the dataset, then write some python code which returns a line graph of the record high and record low temperatures by day of the year over the period 2005-2014. The area between the record high and record low temperatures for each day should be shaded.
+2. Overlay a scatter of the 2015 data for any points (highs and lows) for which the ten year (2005-2014) _daily_ record high or record low was broken in 2015.
+3. Watch out for leap days (i.e. February 29th), it is reasonable to remove these points from the dataset for the purpose of this visualization.
+4. Make the visual nice! Consider issues such as legends, labels, and chart junk.
+
+The data you have been given is near **Ann Arbor, Michigan, United States**
+
 ```markup
 
 %matplotlib notebook
