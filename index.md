@@ -4,7 +4,7 @@
 
 ### Data Visualization
 
-[Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty with Error Estimation)
+-[Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty with Error Estimation)
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
@@ -17,7 +17,7 @@
 ---
 
 
-[Weather Decade Trend Analysis; daily record breaks versus overall record breaks](Python/Weather Trend Analysis)
+-[Weather Decade Trend Analysis; daily record breaks versus overall record breaks](Python/Weather Trend Analysis)
 
 | | |
 |:-------------------------:|:-------------------------:|
@@ -28,7 +28,7 @@
 
 ---
 
-[Country_Energy_GDP: Cleaning, Merging, and Profiling Datasets. Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
+-[Country_Energy_GDP: Cleaning, Merging, and Profiling Datasets. Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
 <img src="images/GDPAndRank.png?raw=true"/>
 
 
@@ -39,7 +39,7 @@
 
 ### Statistical Modeling
 
-[Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
+-[Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
 <img src="images/Wave_State_Race.png?raw=true"/> <img src="images/Scale_Means.png?raw=true"/> <img src="images/SciEd EFA 2018-2019.png?raw=true"/>
 
 
@@ -50,11 +50,11 @@
 
 ---
 
-[Hierarchical Linear Modeling (Regression within Nesting Contexts) for Mental Health](/HLM/Multilevel_Modeling_Mental_Health.pdf)
+-[Hierarchical Linear Modeling (Regression within Nesting Contexts) for Mental Health](/HLM/Multilevel_Modeling_Mental_Health.pdf)
 
 ---
 
-[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users; A Five Factor Model of Personality Approach](/SPSS/Evaluating Personality Factors for Drug Use Risk.pdf)
+-[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users; A Five Factor Model of Personality Approach](/SPSS/Evaluating Personality Factors for Drug Use Risk.pdf)
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
