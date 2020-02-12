@@ -13,7 +13,18 @@
 
 ---
 
-[Visualizing Uncertainty With Error Estimation Download Python Jupyter Notebook (.ipynb)](/Python/Visualizing Uncertainty With Error Estimation/Visualizing Uncertainty With Error Estimation.ipynb)
+[Visualizing Uncertainty With Error Estimation Download Jupyter Notebook pdf](/Python/Visualizing Uncertainty With Error Estimation/Visualizing Uncertainty With Error Estimation.pdf)
+
+---
+
+
+[Weather Trend Analysis](Python/Weather Trend Analysis)
+<img src="images/Line_Plot_Daily_Record.png?raw=true"/><img src="images/Line_Plot_Decade_Record.png?raw=true"/>
+
+---
+
+[Weather Trend Analysis Download Jupyter Notebook pdf](Python/Weather Trend Analysis/Weather Trend Analysis.pdf)
+<img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
@@ -27,10 +38,6 @@
 
 ---
 
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
 ### Statistical Modeling
 
 [Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
