@@ -23,7 +23,7 @@
 
 ---
 
-[Weather Trend Analysis Download Jupyter Notebook pdf](Python/Weather Trend Analysis/Weather Trend Analysis.pdf)
+[Weather Trend Analysis Download Jupyter Notebook pdf](Python/Weather Trend Analysis/Weather Trend Analysis Near Ann Harbor, Michigan (2005-2014).pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
