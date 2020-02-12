@@ -5,6 +5,7 @@
 ### Data Visualization
 
 [Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty With Error Estimation)
+
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/1.png?raw=true">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/2.png?raw=true">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/3.png?raw=true">|
