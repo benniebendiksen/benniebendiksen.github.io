@@ -1,3 +1,5 @@
+# Michigan Uneployment Rate and Household Composition
+
 This data visualization project pulled datasets from the Federal Reserve Economic Data (FRED) and the U.S. Census Bureau, both government run open data initiatives, in order to highlight the disproportionate representation of races in the context of unemployment rates for a few regions in Michigan. 
 
 Why is it that Detroit and Flint, with their largest percentage of households categorized as Black, were hit harder by the economic recession of 2008 (as measured by the unemployment rate) than Ann Harbor, which carries a higher percentage of white households?
