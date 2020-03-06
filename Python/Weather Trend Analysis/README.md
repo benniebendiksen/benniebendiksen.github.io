@@ -1,6 +1,6 @@
 # Daily Temperature Trend Analysis
 
-I will make a line plot with a scatter overlay of daily data points exceeding the previous ten year daily record high or low for each respective day, as well as a line plot for data points exceeding the previous ten year _overall_ record high or low
+Reading in temperature data from multiple weather stations surrounding Ann Harbor, Michigan, I've geenrated a time series plot with a scatter overlay of daily data points exceeding the previous ten year daily record high or low for each respective day, as well as a line plot for data points exceeding the previous ten year _overall_ record high or low
 
 
 The following variables are provided in a csv:
