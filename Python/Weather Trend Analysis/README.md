@@ -1,6 +1,6 @@
 # Daily Temperature Trend Analysis
 
-Reading in temperature data from multiple weather stations surrounding Ann Harbor, Michigan, I've geenrated a time series plot with a scatter overlay of daily data points exceeding the previous ten year daily record high or low for each respective day, as well as a line plot for data points exceeding the previous ten year _overall_ record high or low
+Reading in temperature data from multiple weather stations surrounding Ann Harbor, Michigan, I've genrated a time series plot with a scatter overlay of daily data points exceeding the previous ten year daily record high or low for each respective day, as well as a line plot with a scatter overlay for data points exceeding the previous ten year _overall_ record high or low
 
 ```markup
 
