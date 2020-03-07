@@ -28,6 +28,10 @@
 
 ---
 
+[Michigan Unemployment Rate and Household Composition](Python/Michigan Unemployment Rate and Household Composition)
+<img src="images/Unemployment_Race.png?raw=true"/>
+--
+
 [Country_Energy_GDP: Cleaning, Merging, and Profiling Datasets. Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
 <img src="images/GDPAndRank.png?raw=true"/>
 
