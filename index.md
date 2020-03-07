@@ -29,6 +29,7 @@
 ---
 
 [Michigan Unemployment Rate and Household Composition](Python/Michigan Unemployment Rate and Household Composition)
+
 <img src="images/Unemployment_Race.png?raw=true"/>
 
 ---
