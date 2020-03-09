@@ -4,7 +4,7 @@
 
 ### Statistical Modeling
 
-[Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
+[Iterative Factor Analysis: Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
 <img src="images/Wave_State_Race.png?raw=true"/> <img src="images/Scale_Means.png?raw=true"/> <img src="images/SciEd EFA 2018-2019.png?raw=true"/>
 
 
@@ -26,7 +26,7 @@
 
 ### Data Visualization
 
-[Visualizing Uncertainty With Error Estimation](/Python/Visualizing Uncertainty with Error Estimation)
+[Visualizing Error Estimation Uncertainty with Interactivity](/Python/Visualizing Uncertainty with Error Estimation)
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
