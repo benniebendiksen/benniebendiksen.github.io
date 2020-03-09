@@ -33,9 +33,6 @@
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/1.png?raw=true">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/2.png?raw=true">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/3.png?raw=true">|
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/4.png?raw=true">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/5.png?raw=true">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/6.png?raw=true">|
 
-
-[Visualizing Uncertainty With Error Estimation Download Jupyter Notebook pdf](/Python/Visualizing Uncertainty With Error Estimation/Visualizing Uncertainty With Error Estimation.pdf)
-
 ---
 
 
@@ -44,9 +41,6 @@
 | | |
 |:-------------------------:|:-------------------------:|
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/Line_Plot_Daily_Record.png?raw=true">  | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/Line_Plot_Decade_Record.png?raw=true">|
-
-
-[Weather Trend Analysis Download Jupyter Notebook pdf](Python/Weather Trend Analysis/Weather Trend Analysis Near Ann Harbor, Michigan (2005-2014).pdf)
 
 ---
 
@@ -58,10 +52,6 @@
 
 [Country_Energy_GDP: Cleaning, Merging, and Profiling Datasets. Answering Varied Questions Regarding Country Energy Indicators, GDP, and Energy Engineering Contribution Ranking](/Python/Country_Energy_GDP)
 <img src="images/GDPAndRank.png?raw=true"/>
-
-
-[Country Energy GDP Download Jupyter Notebook pdf](/Python/Country_Energy_GDP/Country_Energy_GDP.pdf)
-<img src="images/Countries_Notebook_Example.png?raw=true"/>
 
 ---
 
