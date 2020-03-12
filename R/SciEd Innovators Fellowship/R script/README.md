@@ -1,15 +1,11 @@
-```markdown
-################
-#Scale item means, Scale means, by wave (Pre/Post) and by state.
-#Race Distributions, by wave and by state
-#Exploratory Factor Analysis (2018-2019); 2017 survey results yielded single factor solution and did not meet KMO model assumption!!!
-################
-#Data prepping
-#Set directory. Install/load packages as necessary
+1) Scale item means, Scale means, by wave (Pre/Post) and by state.
+2) Race Distributions, by wave and by state
+3) Exploratory Factor Analysis (2018-2019); 2017 survey results yielded single factor solution and did not meet KMO model assumption.
 
+Data prepping
+```markdown
 getwd()
 setwd("/Users/pablo/Desktop/iUse/basuProject/Datasets")
-
 
 library(tidyverse)
 library(plotrix)
@@ -22,17 +18,18 @@ library(data.table)
 library(plyr)
 library(GPArotation)
 library(psych)
-
-
-####Declare functions to be used
-####My Func for generating item means per scale (will use across waves and states)####
+```
+Declare functions to be used
+My Func for generating item means per scale (will use across waves and states)
+```markup
 item_means <- function(df, item_list){  
   item_means <- colMeans(df[, c(item_list)], na.rm=T)
   
   return(item_means)
 } 
-
-####My Func for plotting generated (scale) item means between waves and states; automatically saves plots###
+```
+My Func for plotting generated (scale) item means between waves and states; automatically saves plots
+```markup
 grid_barplot_item_means_fun = function(state_wave_item_means, scale_items_list, fig_title){
   state_wave_item_means <- melt(state_wave_item_means)  #the function melt reshapes it from wide to long
   setnames(state_wave_item_means, "value", "Mean")
@@ -53,8 +50,9 @@ grid_barplot_item_means_fun = function(state_wave_item_means, scale_items_list, 
   
   return (state_wave_item_means)
 }
-
-####My func for generating and plotting Scale means by wave and state (returned value of prev. func. is an argument here)####
+```
+My func for generating and plotting scale means by wave and state (returned value of prev. func. is an argument here)
+```markup
 grid_barplot_scale_mean_fun = function(state_wave_item_means, column_name){
   #Get Scale Mean
   scale_mean<-sapply(split(state_wave_item_means$Mean, state_wave_item_means$Wave_State), mean)
@@ -75,10 +73,9 @@ grid_barplot_scale_mean_fun = function(state_wave_item_means, column_name){
   
   return (mean_plot)
 }
-
-
-
-#Read-in fa18sp19 Basu dataset, ensure dataframe is structured
+```
+Read-in and prep fa18sp19 Basu dataset
+```markup
 Basufa18sp19<-read.csv(file="SciEd_Student_Survey_grades_612.csv", stringsAsFactors=FALSE, header=T)
 Basufa18sp19 <- Basufa18sp19[-1, ]
 
@@ -112,6 +109,9 @@ Basufa18sp19$PrePost[Basufa18sp19$Q24=="2"]<-"Post"
 
 #Set grouping-by criteria for future aggregate stats (mean)
 splt.by <- c('PrePost','State')
+```
+Call functions on a scale by scale basis
+```markup
 ################
 #Critical Voice item means, by wave and by state
 ################
@@ -129,12 +129,9 @@ crit_voi_means_state_wave <- grid_barplot_item_means_fun(crit_voi_means_state_wa
 #function call 3
 crit_voi_mean_state_wave_plot <- grid_barplot_scale_mean_fun(crit_voi_means_state_wave, "Critical Voice" )
 
-
 ################
 #Shared Authority item means, by wave and by state
 ################
-
-
 
 ShrAuthList <- c("ShrAuth_1", "ShrAuth_2", "ShrAuth_3", "ShrAuth_4", "ShrAuth_5") 
 
@@ -232,11 +229,9 @@ selfconc_means_state_wave <- grid_barplot_item_means_fun(selfconc_means_state_wa
 
 #function call 3
 selfconc_state_wave_plot <- grid_barplot_scale_mean_fun(selfconc_means_state_wave, "Self Concept STEM" )
-
-################
-#Save Scale Mean Plots
-################
-                
+```
+Save Scale Mean Plots. Generate and save race distribution plot
+```markup             
 #arrange first six scale mean barplots as grid and save
 png("Scale_Means.png")
 grid.arrange(crit_voi_mean_state_wave_plot, shr_auth_mean_state_wave_plot, stdntvoi_mean_state_wave_plot, critstm_mean_state_wave_plot, comm_mean_state_wave_plot, eng_mean_state_wave_plot)
@@ -272,10 +267,9 @@ post_NY_race <- ggplot(data=df_Wave_State[3][["Post.New York"]]) + geom_bar(aes(
 png("Wave_State_Race.png")
 grid.arrange(pre_MA_race, post_MA_race, pre_NY_race, post_NY_race)
 dev.off()
-
-################
-#Exploratory Factor Analysis (Pre)
-################
+```
+Exploratory Factor Analysis (Pre)
+```markup
 
 scales <- c("PrePost", "CritVoi_1", "CritVoi_2", "CritVoi_3", "CritVoi_4", "ShrAuth_1", "ShrAuth_2", "ShrAuth_3", "ShrAuth_4", "ShrAuth_5", "StdntVoi_1", "StdntVoi_2", "StdntVoi_3", "StdntVoi_4", "CritSTMLit_1", "CritSTMLit_2","CritSTMLit_4", "CritSTMLit_5", "Comm_1", "Comm_2r", "Comm_3", "Comm_4", "Comm_5", "Eng_1", "Eng_2", "Eng_3", "Eng_4", "SelfConc_1r", "SelfConc_2", "SelfConc_3", "SelfConc_4r", "SelfConc_5r")
 df_scales <- Basufa18sp19[scales]
@@ -283,7 +277,6 @@ df_scales <- Basufa18sp19[scales]
 Basufa18sp19_Pre_Post = split(df_scales, df_scales$PrePost)
 Basufa18sp19_Post = Basufa18sp19_Pre_Post[[1]]
 Basufa18sp19_Pre = Basufa18sp19_Pre_Post[[2]]
-
 
 Basufa18sp19_Pre = subset(Basufa18sp19_Pre, select = -c(PrePost) )
 
@@ -293,7 +286,6 @@ VSS(Basufa18sp19_Pre, n=8, rotate = "varimax", fm = "pa", SMC = FALSE)
 
 #Correlations generally below .5 (and only around .5 for items within same scale)
 correlations= cor(Basufa18sp19_Pre, use = "pairwise.complete.obs")
-
 
 #Significant Bartlett's Test
 cortest.bartlett(correlations, n=nrow(df_scales))
@@ -314,7 +306,6 @@ efa.model.1 <- fa(Basufa18sp19_Pre, nfactors = 8, rotate="oblimin", SMC=FALSE, f
 #Suppress printing factor loadings =< 0.3
 print(efa.model.1, cut = 0.3, digits = 3)
 
-
 #efa.model.2 <- fa(df_scales, nfactors = 7, rotate="varimax", SMC=FALSE, fm = "pa")
 #print(efa.model.2, cut = 0.3, digits = 3)
 
@@ -322,10 +313,9 @@ print(efa.model.1, cut = 0.3, digits = 3)
 #on one factor (allowing for their construct interpretation) save for 1 self-concept in STEM item (SelfConc_2) and Comm_2.
 #Self Conc 1 and Comm 2 load on separate factor
 #SelfConc 1, SelfConc2 and Comm 2 currently do not correlate well with their respective scale items!
-
-################
-#Exploratory Factor Analysis (Post)
-################
+```
+Exploratory Factor Analysis (Post)
+```markup
 Basufa18sp19_Post = subset(Basufa18sp19_Post, select = -c(PrePost) )
 
 #Change window view parameters and check very simple structure plot
@@ -334,7 +324,6 @@ VSS(Basufa18sp19_Post, n=8, rotate = "varimax", fm = "pa", SMC = FALSE)
 
 #Correlations generally below .5 (and only around .5 for items within same scale)
 correlations2= cor(Basufa18sp19_Post, use = "pairwise.complete.obs")
-
 
 #Significant Bartlett's Test
 cortest.bartlett(correlations2, n=nrow(df_scales))
@@ -356,15 +345,15 @@ efa.model.1.post <- fa(Basufa18sp19_Post, nfactors = 8, rotate="oblimin", SMC=FA
 #efa.model.1.post <- fa(Basufa18sp19_Post, nfactors = 7, rotate="varimax", SMC=FALSE, fm = "pa")
 #Suppress printing factor loadings =< 0.3
 print(efa.model.1.post, cut = 0.3, digits = 3)
-#We settle for an 8 factor solution again due to the fact that each factor has at least two maximum item loadings, 
-#and that this solution is easier to interpret than the 7 factor solution (two scales load on one factor);
-#SelfConc 2, and 3 load on separate factor (as opposed to Self Conc 1 and Comm 2)
-#While Self Conc 2 and 3, Comm 2, and now Shared Authority 4 do not hang well with their respective scale items.
+```
+We settle for an 8 factor solution again due to the fact that each factor has at least two moderate to strong item loadings, 
+and that this solution is easier to interpret than the 7 factor solution (two scales load on one factor);
+SelfConc 2, and 3 load on separate factors (as opposed to Self Conc 1 and Comm 2 in Pre analysis); Self Conc 2 and 3, Comm 2, and now Shared Authority 4 do not hang well with their respective scale items.
 
-#Self Concept 1 re-aligned with its scale, but Self Concept 3 now loading separately...
-#Self Concept 2, Self Concept 3, Shared Authority 4, and Community Connectedness 2 will require further revision (though sample size for Post is a few hundred cases smaller than Pre).
+Self Concept 1 re-aligned with its scale, though Self Concept 3 now loading separately...
+Self Concept 2, Self Concept 3, Shared Authority 4, and Community Connectedness 2 will require further revision (though sample size for Post is a few hundred cases smaller than Pre).
 
-#We consider this a significant improvement in aligning the latent structures of all but two of our seven scales to a single latent trait per scale (compared to 2017 single factor solution)
+We consider this a significant improvement in aligning the latent structures of all but two of our seven scales to a single latent trait per scale (compared to 2017 single factor solution)
 
 ```
 
