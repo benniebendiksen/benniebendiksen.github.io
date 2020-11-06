@@ -1,0 +1,149 @@
+from unicorn_binance_websocket_api.unicorn_binance_websocket_api_manager import BinanceWebSocketApiManager
+import json
+import threading
+import time
+from matplotlib import pyplot as plt
+import pandas as pd
+import numpy as np
+import pickle
+import concurrent.futures
+class Base_Class():
+    def __init__(self):
+        self.binance_websocket_api_manager=BinanceWebSocketApiManager(exchange="binance.com")
+        self.markets=['btcusdt']
+        self.coins=['eth','matic', 'ankr','link','ctk','uni','crv','ren','bnb','dot','ltc','bch','xrp','fil','sxp','yfi','xmr','eos',
+        'ksm','xtz','ocean', 'yfii','sushi']
+        for coin in self.coins:
+            self.markets+=[coin+'usdt',coin+'btc']
+        self.channels=['depth5']
+        self.stream_id=self.binance_websocket_api_manager.create_stream(channels=[''],markets=[''])
+        self.streams={}
+        self.lockbook={}
+        self.collection=self.unicorn_collection(self,manager=self.binance_websocket_api_manager,stream_id=self.stream_id)
+        self.collection.subscribe(channels=self.channels,markets=self.markets)
+        threading.Thread(target=self.print_pushes).start()
+        self.logs=[]
+        threading.Thread(target=self.log_dump).start()
+
+    def log_dump(self):
+        while True:
+            time.sleep(30)
+            pickle.dump(self.logs,open('logs.pkl','wb'))
+
+    class Book():
+        def __init__(self,name,lock):
+            self.name=name
+            self.lock=lock
+            self.bids=[[0,0]]
+            self.asks=[[0,0]]
+
+        def get_top_ask(self):
+            return {'price':float(self.asks[0][0]),'quant':float(self.asks[0][0])}
+        def get_top_bid(self):
+            return {'price':float(self.bids[0][0]),'quant':float(self.bids[0][0])}
+
+
+    class Tick():
+        def __init__(self,name,lock):
+            self.name=name
+            self.lock=lock
+            self.lookback=1000*60*5
+            self.ticks=pd.DataFrame()
+            self.time=0
+
+        def get_last_seconds(self,seconds):
+            return self.ticks[self.ticks.time>self.time-1000*seconds]
+
+
+    class unicorn_collection():
+        def __init__(self,Outer,manager,stream_id):
+            self.Outer=Outer
+            self.manager=manager
+            self.stream_id=stream_id
+            threading.Thread(target=self.stream).start()
+
+        def subscribe(self,channels=[],markets=[]):
+            self.manager.subscribe_to_stream(stream_id=self.stream_id,channels=channels,markets=markets)
+            for c in channels:
+                for m in markets:
+                    self.Outer.lockbook[m+'@'+c]=threading.Lock()
+                    if c=='depth5':
+                        self.Outer.streams[m+'@'+c]=self.Outer.Book(m+'@'+c,self.Outer.lockbook[m+'@'+c])
+                    else:
+                        self.Outer.streams[m+'@'+c]=self.Outer.Tick(m+'@'+c,self.Outer.lockbook[m+'@'+c])
+
+
+        def unsubscribe(self,markets=[]):
+            self.manager.unsubscribe_from_stream(stream_id=self.stream_id,markets=markets)
+            channels=['depth5','trade']
+            for m in markets:
+                for c in channels:
+                    del self.Outer.lockbook[m+'@'+c]
+                    del self.Outer.streams[m+'@'+c]
+
+
+        def stream(self):
+            while True:
+                oldest_stream_data_from_stream_buffer = self.manager.pop_stream_data_from_stream_buffer()
+                if oldest_stream_data_from_stream_buffer:
+                    try:
+                        stream=json.loads(oldest_stream_data_from_stream_buffer)
+                        stream_name=stream['stream']
+                        data=stream['data']
+                        if stream_name.split('@')[-1]=='depth5':
+                            threading.Thread(target=self.update_orderbook,args=(stream['stream'],stream['data'])).start()
+                        elif stream_name.split('@')[-1]=='trade':
+                            threading.Thread(target=self.push_trade,args=(stream['stream'],stream['data'])).start()
+
+                    except:pass
+
+        def update_orderbook(self,stream_name,data):
+            try:
+                bids=data['bids']
+                asks=data['asks']
+                self.Outer.lockbook[stream_name].acquire()
+                self.Outer.streams[stream_name].bids=bids
+                self.Outer.streams[stream_name].asks=asks
+                self.Outer.lockbook[stream_name].release()
+            except:pass
+
+        def push_trade(self,stream_name,data):
+            try:
+                self.Outer.lockbook[stream_name].acquire()
+                self.Outer.streams[stream_name].ticks=self.Outer.streams[stream_name].ticks.append({'time':data['E'],'price':data['p'],'quant':data['q'],'side':data['m']},ignore_index=True)
+                #self.Outer.streams[stream_name].ticks=self.Outer.streams[stream_name].ticks[self.Outer.streams[stream_name].ticks.time>data['E']-self.Outer.streams[stream_name].lookback]
+                self.Outer.streams[stream_name].time=data['E']
+                print('fooie')
+                #print(self.Outer.streams['btcusdt'].time)
+                    #with concurrent.futures.ThreadPoolExecutor() as executor:
+                    #future = executor.submit(self.Outer.streams[stream_name].get_last_seconds, 1)
+                    #return_value = future.result()
+                    #print(return_value)
+                #t = threading.Timer(5.0, self.Outer.streams[stream_name].get_last_seconds, [5])
+                #t.start()
+                #print(t)
+                
+                self.Outer.lockbook[stream_name].release()
+            except:pass
+
+
+    def print_pushes(self):
+        while 1:
+            for coin in self.coins:
+                try:
+                    coinusdtbid=self.streams[coin+'usdt@depth5'].get_top_bid()['price']
+                    coinusdtask=self.streams[coin+'usdt@depth5'].get_top_ask()['price']
+                    coinbtcbid=self.streams[coin+'btc@depth5'].get_top_bid()['price']
+                    coinbtcask=self.streams[coin+'btc@depth5'].get_top_ask()['price']
+                    #btcusdtrade=self.streams['btcusdt@trade'].get_last_seconds(5)
+
+                    print(coin,time.time())
+                        #btcusdtrade.plot()
+                    self.logs.append({'time':time.time(),'coin':coin,
+                    coin+'usdt':{'bids':self.streams[coin+'usdt@depth5'].bids,'asks':self.streams[coin+'usdt@depth5'].asks},
+                    coin+'btc':{'bids':self.streams[coin+'btc@depth5'].bids,'asks':self.streams[coin+'btc@depth5'].asks}})
+
+                except:pass
+Base_Class()
+
+
