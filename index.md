@@ -19,7 +19,7 @@
 
 ---
 
-[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users](/SPSS/Evaluating_Personality_Factors_for_Drug_Use_Risk.pdf)
+[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users](/SPSS/Evaluating&#32;Personality&#32;Factors&#32;for&#32;Drug&#32;Use&#32;Risk.pdf)
 
 ---
 
