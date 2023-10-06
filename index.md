@@ -2,6 +2,10 @@
 
 ---
 
+### Programming Projects
+
+[Learned Motion Similarity](https://github.com/benniebendiksen/motion-similarity/tree/main)
+
 ### Statistical Modeling
 
 [Assessing Reactions to Virtual Crowd Disposition](/R/Mobs_Project/Virtual_Mobs_Human_Reactions.pdf)
