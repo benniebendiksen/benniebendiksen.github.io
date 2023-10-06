@@ -4,7 +4,17 @@
 
 ### Programming Projects
 
+[Rust Fast Websockets Use](https://github.com/benniebendiksen/rust_websockets_optimized/tree/master)
+
+--
+
 [Learned Motion Similarity](https://github.com/benniebendiksen/motion-similarity/tree/main)
+
+---
+
+[Channel Capturing Algorithm in a Futures Market](https://github.com/benniebendiksen/channel-generated-trailing-stop-loss-bot/tree/main)
+
+---
 
 ### Statistical Modeling
 
