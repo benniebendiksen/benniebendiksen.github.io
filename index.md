@@ -18,7 +18,7 @@
 
 ### Data Visualization
 
-[Visualizing Error Estimation Uncertainty with Interactivity](/Python/Visualizing Uncertainty with Error Estimation)
+[Visualizing Error Estimation Uncertainty with Interactivity](/Python/Visualizing#32Uncertainty#32with#32Error#32Estimation)
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
