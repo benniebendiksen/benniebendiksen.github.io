@@ -19,7 +19,7 @@
 
 ---
 
-[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users; A Five Factor Model of Personality Approach](/SPSS/Evaluating_Personality_Factors_for_Drug_Use_Risk.pdf)
+[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users](/SPSS/Evaluating_Personality_Factors_for_Drug_Use_Risk.pdf)
 
 ---
 
