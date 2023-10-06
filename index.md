@@ -4,7 +4,7 @@
 
 ### Programming Projects
 
-[Rust Fast Websockets Use](https://github.com/benniebendiksen/rust_websockets_optimized/tree/master)
+[Rust Fast Websockets](https://github.com/benniebendiksen/rust_websockets_optimized/tree/master)
 
 ---
 
