@@ -1,4 +1,4 @@
-A Repository of Projects I've Completed in R Programming
+A Repository for R Programming projects
 
 
 
