@@ -4,22 +4,19 @@
 
 ### Statistical Modeling
 
-[Iterative Factor Analysis: Sci-Ed Fellowship Project Walkthrough](/R/SciEd Innovators Fellowship)
+[Hierarchical Linear Modeling (Regression within Nesting Contexts) for Mental Health](/HLM/Multilevel_Modeling_Mental_Health.pdf)
+<img src="images/Hierarchical_Linear_Model.png?raw=true"/>
+
+---
+
+[Iterative Factor Analysis: Sci-Ed Fellowship Project Walkthrough](/R/SciEd&#32Innovators&#32Fellowship)
 <img src="images/Wave_State_Race.png?raw=true"/> <img src="images/Scale_Means.png?raw=true"/> <img src="images/SciEd EFA 2018-2019.png?raw=true"/>
 
 
 
-[Sci-Ed Fellowship Project View R Script](/R/SciEd Innovators Fellowship/R script)
+[Sci-Ed Fellowship Project View R Script](/R/SciEd&#32Innovators&#32Fellowship/R&#32script)
 
 
-
----
-
-[Hierarchical Linear Modeling (Regression within Nesting Contexts) for Mental Health](/HLM/Multilevel_Modeling_Mental_Health.pdf)
-
----
-
-[Evaluating Drug-Use Risk in a Theorized Drug-Use Profile of Users and Non-Users](/SPSS/Evaluating&#32;Personality&#32;Factors&#32;for&#32;Drug&#32;Use&#32;Risk.pdf)
 
 ---
 
