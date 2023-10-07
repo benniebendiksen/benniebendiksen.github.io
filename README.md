@@ -1,4 +1,4 @@
-## Pablo Bendiksen's Code Portfolio
+## Bennie Bendiksen's Code Portfolio
 
 This repository documents different programming projects and statistical analyses of mine. 
 
